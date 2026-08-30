@@ -1,0 +1,20 @@
+{
+  "name": "Deb NFT",
+  "symbol": "DBS",
+  "description": "A legendary NFT created by Deb.",
+  "image": "https://raw.githubusercontent.com/DebasritaS/Q3_26_Builder_DebasritaS/main/spl-nft-q326/assets/deb-nft.png",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Deb"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "Royal"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Futuristic"
+    }
+  ]
+}
