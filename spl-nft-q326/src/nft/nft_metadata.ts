@@ -25,7 +25,7 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      "https://gateway.irys.xyz/4JGp35Yh1hDSgb55HZsqFzBT3bUuw4A1nbvCavDxbr25";
+      "https://gateway.irys.xyz/43v6DzZbNEQcwfnF7g9JbGV9t6M14gScLyRUHKTXtiFf";
 
     //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
     //change the metadata
@@ -34,7 +34,7 @@ umi.use(signerIdentity(signer));
     // console.log(`metadata uri: ${myUri} `);
 
 
-    //Not updated metadata
+    //Not updated metadata for generug.png
 
     //  const metadata = {
     //   "name": "Debrug ",
@@ -43,14 +43,24 @@ umi.use(signerIdentity(signer));
     //   category: "image"
     //  }
      
-    //Updated metadata
+    //Updated metadata for generug.png
+
+    //  const metadata = {
+    //   "name": "De rug ",
+    //   "description": "Updated metadata for my first NFT on Solana using Metaplex Umi.",
+    //   "image": image,
+    //   category: "image"
+    //  }
+
+     //Metadata for generug2.png
 
      const metadata = {
-      "name": "De rug ",
-      "description": "Updated metadata for my first NFT on Solana using Metaplex Umi.",
+      "name": "Purple Dream ",
+      "description": "Metadata for my second NFT on Solana using Metaplex Umi.",
       "image": image,
       category: "image"
      }
+
 
       const myUri = await umi.uploader.uploadJson(metadata);
 
@@ -62,8 +72,11 @@ umi.use(signerIdentity(signer));
   }
 })();
 
-// nft-metadata.ts
+// nft-metadata.ts generug.png "Debrug"
 // metadata uri: https://gateway.irys.xyz/3cdZ1uJ3RofiQd8A4wZKUna2ccMDsDyNW5HcWzRQJ8nq
 
-// updated nft-metadata.ts
+// updated nft-metadata.ts generug.png  "De rug"
 // metadata uri: https://gateway.irys.xyz/759aG2G9uJEosR7hDFeGPRvTLEHS3iec4tBPxxiAb68w
+
+//generug2.png  "Purple Dream"
+// metadata uri: https://gateway.irys.xyz/5Uq29GzRa9KBnu6zovtgUCJz781Ew21E2xJTiKAbaNtL 

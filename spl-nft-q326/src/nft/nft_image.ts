@@ -28,13 +28,13 @@ umi.use(signerIdentity(signer));
   try {
     //chanege image path to your image path
     const image = await readFile(
-  "/mnt/c/Users/DEBASRITA SAHA/Documents/GitHub/Q3_26_Builder_DebasritaS/spl-nft-q326/assets/generug.png"
+  "/mnt/c/Users/DEBASRITA SAHA/Documents/GitHub/Q3_26_Builder_DebasritaS/spl-nft-q326/assets/generug2.png"
 );
 
     //change the image name and mime type
     const file = createGenericFile(
   image,
-  "generug.png",
+  "generug2.png",
   { contentType: "image/png" },
 );
 
@@ -48,4 +48,5 @@ umi.use(signerIdentity(signer));
 })();
 
 // nft-image.ts
-// Your image URI:  https://gateway.irys.xyz/4JGp35Yh1hDSgb55HZsqFzBT3bUuw4A1nbvCavDxbr25
+// (generug.pngYour image URI:  https://gateway.irys.xyz/4JGp35Yh1hDSgb55HZsqFzBT3bUuw4A1nbvCavDxbr25
+// (generug2.png)Your image URI:  https://gateway.irys.xyz/43v6DzZbNEQcwfnF7g9JbGV9t6M14gScLyRUHKTXtiFf
