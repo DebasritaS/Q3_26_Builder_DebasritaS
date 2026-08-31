@@ -1,6 +1,14 @@
 # Week1 Assignment on SPL Token and NFT
 
+## Cloned From https://github.com/ShrinathNR/spl-nft-q326/tree/main
 
+> Before running the scripts, go through these docs:
+> - [Solana token docs](https://solana.com/docs/tokens) — mint accounts, token accounts, and ATAs
+> - [Solana Kit](https://www.solanakit.com/) — the JS SDK used for building and sending transactions
+> - [Metaplex Token Metadata](https://www.metaplex.com/docs/smart-contracts/token-metadata) — attaching metadata to SPL tokens
+> - [Metaplex Core](https://www.metaplex.com/docs/smart-contracts/core) — the NFT standard used in the NFT scripts
+
+---
 
 ## 📁 Project Structure
 
@@ -85,13 +93,39 @@ npm install
 
 Put Your OWN Wallet address in "import wallet from "OWN_WALLET_ADDRESS";"
 
+---
+## SPL Token
 
+Uses **@solana/kit** and **@solana-program/token** for transactions, and **mpl-token-metadata** via UMI for on-chain metadata.
+
+| Script | Command | What it does |
+|---|---|---|
+| `spl_init.ts` | `npm run spl:init` | Creates a new mint account |
+| `spl_metadata.ts` | `npm run spl:metadata` | Attaches a name, symbol, and URI to the mint |
+| `spl_mint.ts` | `npm run spl:mint` | Creates your associated token account and mints tokens into it |
+| `spl_transfer.ts` | `npm run spl:transfer` | Sends tokens to another wallet i.e ata to ata |
+
+Run them in order. Each script logs the addresses/signatures you'll need to paste into the next one.
+
+---
+
+## NFT
+
+Uses **@solana/kit** and **mpl-core** via UMI. Images and metadata are stored on Irys (decentralized storage).
+
+| Script | Command | What it does |
+|---|---|---|
+| `nft_image.ts` | `npm run nft:image` | Uploads your image to Irys, logs the image URI |
+| `nft_metadata.ts` | `npm run nft:metadata` | Builds the metadata JSON and uploads it, logs the metadata URI |
+| `nft_mint.ts` | `npm run nft:mint` | Mints the NFT on-chain using the metadata URI |
+
+---
 
 ## 📸 Proof of Execution
 
 Screenshots are inside spl-nft-q326/Proof
 
-
+---
 ### Proof 
 
 spl_init.ts
