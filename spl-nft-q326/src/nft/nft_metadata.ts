@@ -32,6 +32,19 @@ umi.use(signerIdentity(signer));
     // const metadata =
     // const myUri =
     // console.log(`metadata uri: ${myUri} `);
+
+     const metadata = {
+      "name": "Debrug ",
+      "description": "This is my first NFT on Solana using Metaplex Umi.",
+      "image": image,
+      category: "image"
+     }
+
+      const myUri = await umi.uploader.uploadJson(metadata);
+
+      console.log(`metadata uri: ${myUri} `)
+
+
   } catch (error) {
     console.log("error", error);
   }
