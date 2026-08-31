@@ -33,9 +33,21 @@ umi.use(signerIdentity(signer));
     // const myUri =
     // console.log(`metadata uri: ${myUri} `);
 
+
+    //Not updated metadata
+
+    //  const metadata = {
+    //   "name": "Debrug ",
+    //   "description": "This is my first NFT on Solana using Metaplex Umi.",
+    //   "image": image,
+    //   category: "image"
+    //  }
+     
+    //Updated metadata
+
      const metadata = {
-      "name": "Debrug ",
-      "description": "This is my first NFT on Solana using Metaplex Umi.",
+      "name": "De rug ",
+      "description": "Updated metadata for my first NFT on Solana using Metaplex Umi.",
       "image": image,
       category: "image"
      }
