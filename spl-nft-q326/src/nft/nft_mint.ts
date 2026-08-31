@@ -1,5 +1,5 @@
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
-import wallet from "../../devnet-wallet.json";
+import wallet from "/home/debasritasaha/.config/solana/id.json";
 import {
   createSignerFromKeypair,
   generateSigner,

@@ -2,7 +2,7 @@ import {
   createSignerFromKeypair,
   signerIdentity,
 } from "@metaplex-foundation/umi";
-import wallet from "../../devnet-wallet.json";
+import wallet from "/home/debasritasaha/.config/solana/id.json";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys";
 
@@ -25,7 +25,7 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      "https://gateway.irys.xyz/5EDyiNrMWfhjdsEwXLrwkHPwZoZB2m1A2Kudrfxo1tpr";
+      "https://gateway.irys.xyz/4JGp35Yh1hDSgb55HZsqFzBT3bUuw4A1nbvCavDxbr25";
 
     //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
     //change the metadata
