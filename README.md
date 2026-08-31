@@ -42,13 +42,13 @@
 
 I used My wallet from my laptop
 
-## SPL (Assignment1 Task-1)
+### SPL (Assignment1 Task-1)
 1. ran spl_int.ts
 2. ran spl_metadata.ts
 3. ran spl_mint.ts  created 7 DBS tokens
 4. ran spl_transfer.ts transferred 2 tokens to another wallet
 
-## NFT
+### NFT
 
 (Assignment1 Task-2)
 1. ran nft_image.ts  For NFT #1 "Debrug"
@@ -73,7 +73,7 @@ I used My wallet from my laptop
 3. ran modified nft_mint.ts Minted NFT #3 "Picnic"
 4. ran nft_burn.ts  Burned NFT #3 "Picnic"
 
-#ALL Transaction Signatures are at the end of this file
+ALL Transaction Signatures are at the end of this file
 
 ---
 ### 1. Prerequisites & Installation
@@ -89,22 +89,10 @@ Put Your OWN Wallet address in "import wallet from "OWN_WALLET_ADDRESS";"
 
 ## 📸 Proof of Execution
 
-### SPL Token Mint & Metadata Verification
-Token mint initialized with on-chain metadata, decimals ,token supply and transfer verified on Solana Devnet:
-
-![SPL Token Verification](./spl-nft-q326/Proof/spl- after mint.png)
-
----
-
-### Metaplex Core NFT Mint & Update Verification
-Metaplex Core NFT minted and updated on Devnet with decentralized metadata and asset parameters:
-
-![Metaplex Core NFT Verification](./spl-nft-q326/Proof/nft 1- minted Debrug.png)
-
----
+Screenshots are inside spl-nft-q326/Proof
 
 
-### Proof
+### Proof 
 
 spl_init.ts
 mint address: HoeRyA8MGTpVLhgB1fbbWfdbkFvUe3obfrHLzY6wJG6c , 
