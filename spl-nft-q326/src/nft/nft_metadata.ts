@@ -61,3 +61,9 @@ umi.use(signerIdentity(signer));
     console.log("error", error);
   }
 })();
+
+// nft-metadata.ts
+// metadata uri: https://gateway.irys.xyz/3cdZ1uJ3RofiQd8A4wZKUna2ccMDsDyNW5HcWzRQJ8nq
+
+// updated nft-metadata.ts
+// metadata uri: https://gateway.irys.xyz/759aG2G9uJEosR7hDFeGPRvTLEHS3iec4tBPxxiAb68w

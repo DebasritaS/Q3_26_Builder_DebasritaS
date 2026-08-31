@@ -119,3 +119,9 @@ const token_decimals = 1_000_000n;
     console.log(error);
   }
 })();
+
+// spl-transfer.ts
+// Your fromAta is : HLPsiqbfj5uQE1rvq6NYJokkbw4Lm34TrtFZrKgvmtwY
+// Your toAta is : HvxgNLMiYSCRvEae27ggUhDbPrXQ9VxhHScsnUwbDJcG
+// mint txid: jw21AEfMxgLPaRoEQdZtE8Nb4nkKTXxaLCjS9bVzErHyNKDmEhCjPWeQ9YeHuYGtW8o9ZJKZpAGVfL79DXYiV5R
+

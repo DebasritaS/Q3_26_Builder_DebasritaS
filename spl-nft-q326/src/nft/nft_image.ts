@@ -46,3 +46,6 @@ umi.use(signerIdentity(signer));
     console.log(error);
   }
 })();
+
+// nft-image.ts
+// Your image URI:  https://gateway.irys.xyz/4JGp35Yh1hDSgb55HZsqFzBT3bUuw4A1nbvCavDxbr25

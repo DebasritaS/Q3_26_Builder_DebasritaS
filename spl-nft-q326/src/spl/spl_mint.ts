@@ -91,3 +91,8 @@ const mint = address("HoeRyA8MGTpVLhgB1fbbWfdbkFvUe3obfrHLzY6wJG6c");
     console.log(error);
   }
 })();
+
+// spl-mint.ts
+// Your ata is : HLPsiqbfj5uQE1rvq6NYJokkbw4Lm34TrtFZrKgvmtwY
+// mint txid: 4cWgDMnngHYeQkJifHBe3uZFhX8rtaWtuvPjjSSGjw7cG3p3CUDUHCKWzFKwiQgqoBiZKcj21zREM5jHUqDKaVbR
+

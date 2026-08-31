@@ -41,3 +41,7 @@ umi.use(mplCore());
     console.log(`errior ${e}`);
   }
 })();
+
+// nft-mint.ts
+// signature 4xe6KKoLCbDaQubYDgJ6a3jK9FEYsyM27Qtx3mevYKPoSrSPLwGWYkiMZv7rkfWx2jFzKbjekHy7eGoTnmvtGE5i , 
+// asset : 8vbYaa2Xr9N3cH449iWWWPGshcG9HzJ4ATKgHsDtB23R
