@@ -44,34 +44,34 @@ I used My wallet from my laptop
 
 ### SPL (Assignment1 Task-1)
 1. ran spl_int.ts
-2. ran spl_metadata.ts
+2. ran spl_metadata.ts deb-nft.png & deb-nft.json
 3. ran spl_mint.ts  created 7 DBS tokens
 4. ran spl_transfer.ts transferred 2 tokens to another wallet
 
 ### NFT
 
 (Assignment1 Task-2)
-1. ran nft_image.ts  For NFT #1 "Debrug"
+1. ran nft_image.ts  For NFT #1 "Debrug" generug.png
 2. ran nft_metadata.ts
-3. ran nft_mint.ts Minted NFT #1 "Debrug"
+3. ran nft_mint.ts Minted NFT #1 "Debrug" generug.png
 
 (Assignment1 Task-3)
-1. ran modified nft_metadata NFT #1 to "De rug" and metadata
-2. ran modified nft_update.ts Updated NFT #1 to "De rug"
+1. ran modified nft_metadata NFT #1 to "De rug" and metadata generug.png
+2. ran modified nft_update.ts Updated NFT #1 to "De rug" generug.png
 
 (Assignment1 Task-4)
-1. ran modified nft_image.ts  For NFT #2 "Purple Dream"
+1. ran modified nft_image.ts  For NFT #2 "Purple Dream" generug2.png
 2. ran modified nft_metadata.ts
-3. ran modified nft_mint.ts Minted NFT #2 "Purple Dream"
+3. ran modified nft_mint.ts Minted NFT #2 "Purple Dream" generug2.png
 
 (Assignment1 Task-5)
-1. ran nft_transfer.ts  For NFT #2 "Purple Dream" to another account
+1. ran nft_transfer.ts  For NFT #2 "Purple Dream" to another account generug2.png
 
 (Assignment1 Task-6)
-1. ran modified nft_image.ts  For NFT #3 "Picnic"
+1. ran modified nft_image.ts  For NFT #3 "Picnic" generug.png
 2. ran modified nft_metadata.ts
-3. ran modified nft_mint.ts Minted NFT #3 "Picnic"
-4. ran nft_burn.ts  Burned NFT #3 "Picnic"
+3. ran modified nft_mint.ts Minted NFT #3 "Picnic" generug.png
+4. ran nft_burn.ts  Burned NFT #3 "Picnic" generug.png
 
 ALL Transaction Signatures are at the end of this file
 
