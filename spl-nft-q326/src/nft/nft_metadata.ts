@@ -25,7 +25,7 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      "https://gateway.irys.xyz/43v6DzZbNEQcwfnF7g9JbGV9t6M14gScLyRUHKTXtiFf";
+      "https://gateway.irys.xyz/4deTo1qh7yrqF2v7zLNUhhJTwarHCFLx8CWFyBDs5hMD";
 
     //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
     //change the metadata
@@ -54,12 +54,22 @@ umi.use(signerIdentity(signer));
 
      //Metadata for generug2.png
 
+    //  const metadata = {
+    //   "name": "Purple Dream ",
+    //   "description": "Metadata for my second NFT on Solana using Metaplex Umi.",
+    //   "image": image,
+    //   category: "image"
+    //  }
+
+        //Metadata for generug3.png  which will be burned after minting the NFT
+
      const metadata = {
-      "name": "Purple Dream ",
-      "description": "Metadata for my second NFT on Solana using Metaplex Umi.",
+      "name": "Picnic ",
+      "description": "Metadata for my third NFT which will be burned later... on Solana using Metaplex Umi.",
       "image": image,
       category: "image"
      }
+
 
 
       const myUri = await umi.uploader.uploadJson(metadata);
@@ -80,3 +90,6 @@ umi.use(signerIdentity(signer));
 
 //generug2.png  "Purple Dream"
 // metadata uri: https://gateway.irys.xyz/5Uq29GzRa9KBnu6zovtgUCJz781Ew21E2xJTiKAbaNtL 
+
+//generug3.png  "Picnic"
+//metadata uri: https://gateway.irys.xyz/HvjJLs2jZwxEyfio5rh2J8zSijJCwMPHAFKCKk88mokn

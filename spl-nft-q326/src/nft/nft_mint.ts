@@ -22,13 +22,13 @@ umi.use(mplCore());
 (async () => {
   try {
     const metadataUri =
-      " https://gateway.irys.xyz/5Uq29GzRa9KBnu6zovtgUCJz781Ew21E2xJTiKAbaNtL ";
+      " https://gateway.irys.xyz/HvjJLs2jZwxEyfio5rh2J8zSijJCwMPHAFKCKk88mokn ";
     const asset = generateSigner(umi);
 
     //add you nft name and metadata uri
      const tx = await create(umi, {
       asset,
-      name: "Purple Dream",
+      name: "Picnic",
       uri: metadataUri,
     });
     
@@ -42,10 +42,14 @@ umi.use(mplCore());
   }
 })();
 
-// nft-mint.ts
+// nft-mint.ts 
 // signature 4xe6KKoLCbDaQubYDgJ6a3jK9FEYsyM27Qtx3mevYKPoSrSPLwGWYkiMZv7rkfWx2jFzKbjekHy7eGoTnmvtGE5i , 
 // asset : 8vbYaa2Xr9N3cH449iWWWPGshcG9HzJ4ATKgHsDtB23R
 
-//new nft minted
+//new nft minted  generug2.png  "Purple Dream"
 //signature 5C8LkEVTkfxhuEKuMX4uctFeQeM4grDZUKqACjvWWcC6wfmaiSAw9FY958YH1GRcQKHQHzPxfbrMAp2ddtb3mBMY , 
 //asset : Eu2YxsTk3HV681X9ADXM7LGDskxnUX4stgW8SAk8Gc5h
+
+//new nft minted  generug3.png  "Picnic" which will be burned later
+//signature 4DhSmS1FDamaBk78oLDoot9KTxLPgQNstcfVjH8tDitiKjmV5B7wz5QGQr4A9KtZBboHBtS25J4JB4kE3sc83LQ4 , 
+//asset : C9ThPjEN1G7qJMhapcLs1jMYxUfqNN855p3EtWXasf59
