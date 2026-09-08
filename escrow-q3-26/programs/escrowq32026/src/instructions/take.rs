@@ -4,7 +4,7 @@ use anchor_spl::token_interface::{
     TransferChecked,
 };
 
-use crate::{state::Escrow, ESCROW_SEED};
+use crate::{state::Escrow,error::ErrorCode, ESCROW_SEED};
 
 #[derive(Accounts)]
 pub struct Take<'info> {
@@ -24,6 +24,20 @@ pub struct Take<'info> {
         associated_token::authority = maker,
     )]
     pub maker_ata_a: InterfaceAccount<'info, TokenAccount>,
+    // ↓ ADD THESE TWO ACCOUNTS:
+    #[account(
+        mut,
+        associated_token::mint = mint_b,
+        associated_token::authority = maker,
+    )]
+    pub maker_ata_b: InterfaceAccount<'info, TokenAccount>,
+    #[account(
+        mut,
+        associated_token::mint = mint_a,
+        associated_token::authority = taker,
+    )]
+    pub taker_ata_a: InterfaceAccount<'info, TokenAccount>,
+    // ↑ END OF NEW ACCOUNTS
     #[account(
         mut,
         close = maker,
@@ -49,7 +63,7 @@ impl<'info> Take<'info> {
     pub fn take(&mut self) -> Result<()> {
         // Check if escrow has expired
         let current_time = Clock::get()?.unix_timestamp;
-        require!(current_time <= self.escrow.expiration, crate::ErrorCode::EscrowExpired);
+        require!(current_time <= self.escrow.expiration, ErrorCode::EscrowExpired);
 
         let signer_seeds: [&[&[u8]]; 1] = [&[
             ESCROW_SEED,
