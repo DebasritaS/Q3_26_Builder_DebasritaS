@@ -189,3 +189,186 @@ signature  3z3M9Ga8NmnS19KSERaSTcFWt78m6LfaNUqSKQHZXqtKP5UAJjB6hqJjBQ3PnfcvXnKRp
 
 
 
+# anchor_vault_starter_q3_26
+
+Overview
+- Starter vault program scaffold intended for the Q3 2026 Builder cohort.
+- Primary purpose: a minimal Anchor-based Solana program that demonstrates a vault/escrow pattern (locks funds, manages ownership/authority, withdraw flow).
+- Expected tech: Rust + Anchor. (Repository language breakdown includes Rust — adapt commands to your local toolchain.)
+
+Prerequisites
+- Rust toolchain (rustup + stable toolchain)
+- Solana CLI (solana)
+- Anchor CLI (anchor)
+- Optionally Node.js / npm (if there are client scripts or tests that use JS/TS)
+- A local Solana validator (solana-test-validator) for local testing
+
+Quick start
+1. Install prerequisites (Rust, Solana CLI, Anchor).
+2. Start local validator:
+   ```bash
+   solana-test-validator --reset
+   ```
+3. Build the Anchor program:
+   ```bash
+   anchor build
+   ```
+4. Run tests (Anchor/Jest or Cargo tests depending on the setup):
+   ```bash
+   anchor test
+   ```
+   or
+   ```bash
+   cargo test
+   ```
+
+Folder structure (typical)
+- Cargo.toml — Rust package manifest for the program
+- Anchor.toml — Anchor workspace/config
+- programs/ — Rust program source (lib.rs, processors, state definitions)
+- tests/ — integration tests (Anchor JS or Rust tests)
+- migrations/ — Anchor migrations (if used)
+- examples/ or client/ — optional client scripts showing how to interact
+
+Configuration
+- Anchor.toml controls build/deploy settings (cluster, provider, wallet, program IDs).
+- Use a `.env` or local config for private keys, RPC URLs, or program IDs if you prefer.
+- Ensure your Solana CLI is pointed to the expected cluster:
+  ```bash
+  solana config set --url http://127.0.0.1:8899
+  solana config get
+  ```
+
+Build & deploy (local)
+- Build:
+  ```bash
+  anchor build
+  ```
+- Deploy to local validator:
+  ```bash
+  anchor deploy --provider.cluster Localnet
+  ```
+- To deploy to devnet/mainnet, configure Anchor.toml and provider (be careful with real funds).
+
+Running tests
+- Run the local validator, then:
+  ```bash
+  anchor test
+  ```
+- If tests are JS/TS-based, ensure `npm install` in repo root (if a JS client exists) and run:
+  ```bash
+  npm test
+  ```
+
+Tips & troubleshooting
+- If Anchor build fails, ensure Rust toolchain and Solana version compatibility.
+- Common fix: update Anchor CLI to match the Anchor framework version in Cargo.toml.
+- If program IDs mismatch, reset Anchor.toml or set IDs via migrations.
+
+Contributing
+- Keep changes small and documented.
+- Add/extend tests for new behavior.
+- Document protocol or account layout changes in comments.
+
+License & attribution
+- Add your preferred license file at repo root (e.g., LICENSE).
+- Note: This README is a scaffold — adapt commands to exact project files if they differ.
+
+
+
+
+# escrow-q3-26
+
+Overview
+- Escrow service/client for the Q3 2026 Builder cohort assignments.
+- Purpose: TypeScript/Node-based service or client that interacts with the Vault/Anchor program or implements escrow logic off-chain.
+- Expected tech: TypeScript (Node.js). (Repository language breakdown lists TypeScript — adjust if you use plain JS.)
+
+Prerequisites
+- Node.js (recommended LTS)
+- npm or yarn
+- If interacting with a blockchain program: a local node/network or RPC endpoint and any required CLI tools (e.g., Solana CLI)
+
+Quick start
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+2. Configure environment:
+   - Copy `.env.example` to `.env` and fill required variables (RPC URL, keypaths, API keys).
+3. Start in development mode:
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   yarn dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   npm start
+   ```
+
+Common scripts (edit package.json if names differ)
+- dev — start with ts-node or nodemon for live reload
+- build — compile TypeScript to JS (tsc)
+- start — run compiled build
+- test — run unit/integration tests (jest, vitest, etc.)
+- lint / format — static checks and formatting
+
+Folder structure (typical)
+- package.json — npm scripts and dependencies
+- tsconfig.json — TypeScript configuration
+- src/ — TypeScript source files
+  - index.ts / server.ts — app entrypoint
+  - controllers/, services/, utils/ — modular code
+- tests/ — unit and integration tests
+- .env.example — example environment variables
+- scripts/ — helper scripts (optional)
+
+Configuration
+- Provide required env vars in `.env`:
+  - Example keys: RPC_URL, PRIVATE_KEY_PATH, API_PORT, LOG_LEVEL
+- Avoid committing real secrets to source control.
+
+Testing
+- Run unit tests:
+  ```bash
+  npm test
+  ```
+- For integration tests that need a local blockchain or test validator, run the validator and point RPC_URL to the local endpoint before testing.
+
+Usage examples
+- If this folder exposes an HTTP API: use curl or Postman to hit endpoints, e.g.:
+  ```bash
+  curl -X POST http://localhost:3000/escrow/create -d '{...}' -H "Content-Type: application/json"
+  ```
+- If it provides CLI scripts, use:
+  ```bash
+  node dist/scripts/createEscrow.js --params ...
+  ```
+
+Deployment
+- Build (`npm run build`), set environment variables on the host, and run (`npm start`).
+- For containerized deployment, create a Dockerfile that installs Node, copies build output, and runs the start script.
+
+Troubleshooting
+- If TypeScript build fails, check tsconfig paths and installed types.
+- If RPC connections fail, verify RPC_URL and network accessibility.
+- Increase logging (LOG_LEVEL=debug) to see detailed errors.
+
+Contributing
+- Add tests for any new logic.
+- Keep API/endpoint changes backward compatible or document breaking changes.
+- Run lint/format before opening a PR.
+
+Contact / Maintainers
+- Add maintainer contact info or link to project owner for questions.
+
+License
+- Add a LICENSE file in the repo root to specify licensing.
