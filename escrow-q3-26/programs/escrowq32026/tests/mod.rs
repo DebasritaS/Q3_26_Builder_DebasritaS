@@ -92,6 +92,7 @@ fn test_make_and_refund() {
             mint_a: mint_a,
             mint_b: mint_b,
             maker_ata_a: maker_ata_a,
+            maker_ata_b: associated_token::get_associated_token_address(&maker, &mint_b),
             escrow: escrow,
             vault: vault,
             associated_token_program: ASSOCIATED_TOKEN_PROGRAM_ID,

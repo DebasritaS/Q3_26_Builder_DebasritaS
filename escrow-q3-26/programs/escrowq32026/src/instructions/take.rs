@@ -4,7 +4,7 @@ use anchor_spl::token_interface::{
     TransferChecked,
 };
 
-use crate::{state::Escrow,error::ErrorCode, ESCROW_SEED};
+use crate::{state::Escrow, error::ErrorCode, ESCROW_SEED};
 
 #[derive(Accounts)]
 pub struct Take<'info> {
@@ -65,10 +65,13 @@ impl<'info> Take<'info> {
         let current_time = Clock::get()?.unix_timestamp;
         require!(current_time <= self.escrow.expiration, ErrorCode::EscrowExpired);
 
+        let maker_key = self.maker.key();
+        let escrow_seed_bytes = self.escrow.seed.to_le_bytes();
+        
         let signer_seeds: [&[&[u8]]; 1] = [&[
             ESCROW_SEED,
-            self.maker.key().as_ref(),
-            &self.escrow.seed.to_le_bytes()[..],
+            maker_key.as_ref(),
+            escrow_seed_bytes.as_ref(),
             &[self.escrow.bump],
         ]];
 

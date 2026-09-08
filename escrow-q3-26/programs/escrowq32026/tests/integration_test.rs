@@ -2,11 +2,12 @@
 
 use anchor_lang::prelude::*;
 use anchor_spl::associated_token::get_associated_token_address;
-use escrowq32026::*;
+use ::escrowq32026::*;
 use litesvm::LiteSVM;
 use solana_keypair::Keypair;
 use solana_pubkey::Pubkey;
-use solana_transaction::{Transaction, TransactionError};
+use solana_signer::Signer;
+use solana_transaction::Transaction;
 
 #[test]
 fn test_make_instruction() {
@@ -280,8 +281,8 @@ fn call_make(
     deposit: u64,
     receive: u64,
     expiration: i64,
-) -> Result<(), TransactionError> {
-    // Build and execute make instruction
+) -> Result<()> {
+    
     Ok(())
 }
 
@@ -293,8 +294,8 @@ fn call_take(
     mint_a: Pubkey,
     mint_b: Pubkey,
     seed: u64,
-) -> Result<(), TransactionError> {
-    // Build and execute take instruction
+) -> Result<()> {
+   
     Ok(())
 }
 
@@ -304,7 +305,7 @@ fn call_refund(
     maker: &Keypair,
     mint_a: Pubkey,
     seed: u64,
-) -> Result<(), TransactionError> {
+) -> Result<()> {
     // Build and execute refund instruction
     Ok(())
 }
@@ -316,7 +317,7 @@ fn call_update(
     seed: u64,
     receive: u64,
     expiration: i64,
-) -> Result<(), TransactionError> {
+) -> Result<()> {
     // Build and execute update instruction
     Ok(())
 }
