@@ -383,3 +383,175 @@ Contact / Maintainers
 License
 - Add a LICENSE file in the repo root to specify licensing.
 ---
+
+
+# Week3 Assignment on AMM
+
+
+
+---
+## Proof in Screenshots folder
+---
+
+## Cloned From https://github.com/ShrinathNR/amm_q2_26/tree/main
+
+---
+
+# amm_q2_26 — Solana Automated Market Maker
+
+A constant-product AMM built on Solana using the Anchor framework. Supports liquidity deposits, withdrawals, and token swaps using the `x × y = k` invariant.
+
+## Features
+
+* Initialize SPL token liquidity pools
+* Deposit liquidity and receive LP tokens
+* Withdraw liquidity by burning LP tokens
+* Swap tokens with slippage protection
+* Configurable pool fees
+* Tested using LiteSVM
+
+## Architecture
+
+```text
+amm_q2_26/
+├── programs/amm_q2_26/
+│   ├── src/
+│   │   ├── lib.rs
+│   │   ├── state.rs
+│   │   ├── error.rs
+│   │   ├── constants.rs
+│   │   └── instructions/
+│   │       ├── initialize.rs
+│   │       ├── deposit.rs
+│   │       ├── withdraw.rs
+│   │       └── swap.rs
+│   └── tests/
+│       ├── tests.rs
+│       └── ix_handlers/
+├── tests/
+├── Anchor.toml
+└── Cargo.toml
+```
+
+## Accounts
+
+**Config PDA** — Stores pool configuration, token mints, fee, authority, and PDA bumps.
+
+Seeds: `["config", seed]`
+
+**Vaults** — Token accounts owned by the config PDA:
+
+* `vault_x` — Token X reserves
+* `vault_y` — Token Y reserves
+
+**LP Mint** — PDA used to mint LP tokens to liquidity providers.
+
+Seeds: `["lp", config]`
+
+## Instructions
+
+### Initialize
+
+```text
+initialize(seed, fee, authority)
+```
+
+Creates the pool config, LP mint, and token vaults.
+
+### Deposit
+
+```text
+deposit(amount, max_x, max_y)
+```
+
+Adds proportional liquidity and mints LP tokens.
+
+### Withdraw
+
+```text
+withdraw(amount, min_x, min_y)
+```
+
+Burns LP tokens and returns proportional Token X and Token Y.
+
+### Swap
+
+```text
+swap(is_x, amount, min)
+```
+
+Swaps between the two tokens with a minimum-output slippage check.
+
+* `is_x = true` → X → Y
+* `is_x = false` → Y → X
+
+## Testing
+
+Tests use **LiteSVM**, so no local validator is required.
+
+```bash
+cargo test -- --nocapture
+```
+
+Current test coverage:
+
+| Test              | Status |
+| ----------------- | ------ |
+| `test_initialize` | ✅      |
+| `test_deposit`    | ✅      |
+| `test_withdraw`   | ✅      |
+| `test_swap`       | ✅      |
+
+## Swap Math
+
+The AMM follows the constant-product invariant:
+
+```text
+x × y = k
+```
+
+For an input `Δx`:
+
+```text
+Δy = y - k / (x + Δx)
+```
+
+Pool fees are applied before calculating the output. If the output is below the user's minimum, the transaction fails with `SlippageExceeded`.
+
+## Getting Started
+
+### Requirements
+
+* Rust
+* Anchor CLI 1.0.x
+* Solana CLI
+
+### Build
+
+```bash
+anchor build
+```
+
+### Test
+
+```bash
+cargo test -- --nocapture
+```
+
+Run a specific test:
+
+```bash
+cargo test test_swap -- --nocapture
+```
+
+## Key Dependencies
+
+* `anchor-lang` — Solana program framework
+* `anchor-spl` — SPL token utilities
+* `constant-product-curve` — AMM mathematics
+* `litesvm` — In-process Solana testing
+
+## Notes
+
+The project uses Anchor 1.0.x with `idl-build` enabled for `anchor-lang` and `anchor-spl`.
+
