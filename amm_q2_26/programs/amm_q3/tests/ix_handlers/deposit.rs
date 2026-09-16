@@ -3,9 +3,12 @@ use {
         solana_program::instruction::Instruction, system_program::ID as SYSTEM_PROGRAM_ID,
         InstructionData, ToAccountMetas,
     },
-    anchor_spl::associated_token::{self, ID as ASSOCIATED_TOKEN_PROGRAM_ID},
+    anchor_spl::{
+        associated_token::{self, ID as ASSOCIATED_TOKEN_PROGRAM_ID},
+        token::ID as TOKEN_PROGRAM_ID,
+    },
     litesvm::LiteSVM,
-    litesvm_token::{spl_token::ID as TOKEN_PROGRAM_ID, CreateAssociatedTokenAccount, MintTo},
+    litesvm_token::{CreateAssociatedTokenAccount, MintTo},
     solana_keypair::Keypair,
     solana_pubkey::Pubkey,
     solana_signer::Signer,
@@ -16,8 +19,8 @@ pub fn create_deposit_ix(
     payer: &Keypair,
     mint_x: Pubkey,
     mint_y: Pubkey,
-    mint_lp: Pubkey,
     config: Pubkey,
+    mint_lp: Pubkey,
     vault_x: Pubkey,
     vault_y: Pubkey,
 ) -> Instruction {
@@ -27,6 +30,7 @@ pub fn create_deposit_ix(
         .owner(&user)
         .send()
         .unwrap();
+
     MintTo::new(&mut svm, &payer, &mint_x, &user_x, 1000000000)
         .send()
         .unwrap();
@@ -35,6 +39,7 @@ pub fn create_deposit_ix(
         .owner(&user)
         .send()
         .unwrap();
+
     MintTo::new(&mut svm, &payer, &mint_y, &user_y, 1000000000)
         .send()
         .unwrap();
@@ -42,14 +47,14 @@ pub fn create_deposit_ix(
     let user_lp = associated_token::get_associated_token_address(&user, &mint_lp);
 
     Instruction::new_with_bytes(
-        amm_video::id(),
-        &amm_video::instruction::Deposit {
+        amm_q3::id(),
+        &amm_q3::instruction::Deposit {
             amount: 100_000_000,
             max_x: 200_000_000,
             max_y: 200_000_000,
         }
         .data(),
-        amm_video::accounts::Deposit {
+        amm_q3::accounts::Deposit {
             user,
             mint_x,
             mint_y,

@@ -1,12 +1,13 @@
+skip_local_validator = true
+
 [toolchain]
-package_manager = "yarn"
 
 [features]
 resolution = true
 skip-lint = false
 
 [programs.localnet]
-amm_video = "6KoUjko5kqLHaF31gdWGBihf8Pw8dUNte2hBpBEJveVe"
+amm_q3 = "4aMzFdMWpbe9WbUqADsKMtwMngcagAc4FoXkmToie2mK"
 
 [provider]
 cluster = "localnet"
