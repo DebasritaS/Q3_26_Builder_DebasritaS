@@ -386,9 +386,6 @@ License
 
 
 # Week3 Assignment on AMM
-
-
-
 ---
 ## Proof in Screenshots folder
 ---
