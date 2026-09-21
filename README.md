@@ -404,7 +404,7 @@ A constant-product AMM built on Solana using the Anchor framework. Supports liqu
 * Withdraw liquidity by burning LP tokens
 * Swap tokens with slippage protection
 * Configurable pool fees
-* Tested using LiteSVM
+* Tested using LiteSVM.
 
 ## Architecture
 
