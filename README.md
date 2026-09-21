@@ -384,7 +384,6 @@ License
 - Add a LICENSE file in the repo root to specify licensing.
 ---
 
-
 # Week3 Assignment on AMM
 ---
 ## Proof in Screenshots folder
