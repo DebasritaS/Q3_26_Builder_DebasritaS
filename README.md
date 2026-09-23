@@ -551,3 +551,105 @@ cargo test test_swap -- --nocapture
 
 The project uses Anchor 1.0.x with `idl-build` enabled for `anchor-lang` and `anchor-spl`.
 
+---
+
+
+# Week4 Assignment on Token22/CTs
+
+
+
+---
+## Proof in Screenshots folder
+---
+
+# token22-q3-26
+
+A Solana Anchor project for a Token-2022 mint with transfer-fee configuration and confidential-transfer support.
+
+## Overview
+
+This project implements a custom Token-2022 program using Anchor and Rust. It demonstrates:
+
+- Token-2022 mint initialization
+- Transfer-fee configuration
+- Metadata and extension setup
+- KYC-style freeze/unfreeze flow
+- Confidential transfer mint initialization
+- Confidential deposit and pending balance application
+
+The program ID configured in this workspace is:
+
+- 7MhqudaCvXdPr5LKvvEuZt5UJ9k1g1kStkoXt3CxDEXM
+
+---
+
+## Project structure
+
+```text
+token22-q3-26/
+├── Anchor.toml
+├── Cargo.toml
+├── rust-toolchain.toml
+├── Cargo.lock
+├── .gitignore
+├── programs/
+│   └── token22-ct/
+│       ├── Cargo.toml
+│       ├── src/
+│       │   ├── constants.rs
+│       │   ├── error.rs
+│       │   ├── instructions.rs
+│       │   ├── lib.rs
+│       │   ├── state.rs
+│       │   └── instructions/
+│       │       ├── apply.rs
+│       │       ├── confidential_mint.rs
+│       │       ├── deposit.rs
+│       │       ├── initialize.rs
+│       │       ├── transfer.rs
+│       │       └── unfreeze.rs
+│       └── tests/
+│           ├── test_all.rs
+│           └── test_handler/
+└── target/
+--- 
+
+## Included program instructions
+
+The main program exposes the following instruction handlers:
+
+-initialize
+-transfer_with_fee
+-unfreeze_kyc_account
+-initialize_confidential_mint
+-deposit_confidential
+-apply_pending_balance
+
+These cover mint setup, account management, fee-based token movement, and confidential transfer flows.
+---
+
+## Token features configured
+
+The mint is initialized with Token-2022 extensions including:
+
+-Transfer fee config
+-Mint close authority
+-Default account state
+-Metadata pointer
+-Token metadata
+-Confidential transfer mint extensions
+-Confidential transfer fee config
+-Permanent delegate support for confidential flows
+
+---
+
+## Prerequisites
+
+Before running this project, make sure you have:
+
+-Rust installed
+-Anchor installed
+-Solana CLI configured
+-Local validator or testnet/devnet access
+
+---
