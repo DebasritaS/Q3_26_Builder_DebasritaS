@@ -577,9 +577,7 @@ This project implements a custom Token-2022 program using Anchor and Rust. It de
 - Confidential transfer mint initialization
 - Confidential deposit and pending balance application
 
-The program ID configured in this workspace is:
 
-- 7MhqudaCvXdPr5LKvvEuZt5UJ9k1g1kStkoXt3CxDEXM
 
 ---
 
@@ -612,18 +610,19 @@ token22-q3-26/
 │           ├── test_all.rs
 │           └── test_handler/
 └── target/
+```
 --- 
 
 ## Included program instructions
 
 The main program exposes the following instruction handlers:
 
--initialize
--transfer_with_fee
--unfreeze_kyc_account
--initialize_confidential_mint
--deposit_confidential
--apply_pending_balance
+- initialize
+- transfer_with_fee
+- unfreeze_kyc_account
+- initialize_confidential_mint
+- deposit_confidential
+- apply_pending_balance
 
 These cover mint setup, account management, fee-based token movement, and confidential transfer flows.
 ---
@@ -632,14 +631,14 @@ These cover mint setup, account management, fee-based token movement, and confid
 
 The mint is initialized with Token-2022 extensions including:
 
--Transfer fee config
--Mint close authority
--Default account state
--Metadata pointer
--Token metadata
--Confidential transfer mint extensions
--Confidential transfer fee config
--Permanent delegate support for confidential flows
+- Transfer fee config
+- Mint close authority
+- Default account state
+- Metadata pointer
+- Token metadata
+- Confidential transfer mint extensions
+- Confidential transfer fee config
+- Permanent delegate support for confidential flows
 
 ---
 
@@ -647,9 +646,9 @@ The mint is initialized with Token-2022 extensions including:
 
 Before running this project, make sure you have:
 
--Rust installed
--Anchor installed
--Solana CLI configured
--Local validator or testnet/devnet access
+- Rust installed
+- Anchor installed
+- Solana CLI configured
+- Local validator or testnet/devnet access
 
 ---
