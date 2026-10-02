@@ -652,3 +652,13 @@ Before running this project, make sure you have:
 - Local validator or testnet/devnet access
 
 ---
+
+
+# Week5 Assignment on NFT Staking Core
+---
+## Proof in Screenshots folder
+---
+
+## Cloned From https://github.com/AndreiaCanadas/anchor-core-staking
+
+---
